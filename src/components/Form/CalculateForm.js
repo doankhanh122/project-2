@@ -12,7 +12,7 @@ var ChuSo = [
   " chín ",
 ];
 
-function DocSo3ChuSo(baso) {
+export function DocSo3ChuSo(baso) {
   var tram;
   var chuc;
   var donvi;
@@ -51,6 +51,8 @@ function DocSo3ChuSo(baso) {
       }
       break;
   }
+
+  KetQua = KetQua.replace(/\s{2,}/g, " ").trim();
   return KetQua;
 }
 

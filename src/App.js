@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import CalculateForm from "./components/Form/CalculateForm";
+import Result from "./components/Result/Result";
 
 function App() {
+  const [res, setRes] = useState("");
+
+  const getResultHandler = (res) => {
+    setRes(res);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CalculateForm getResult={getResultHandler} />
+      <Result ketqua={res} />
     </div>
   );
 }
